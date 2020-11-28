@@ -1,0 +1,12 @@
+# .gitignore for gshortcuts
+
+# ignore todo list
+TODO
+
+# macOS folder display preferences
+.DS_Store
+
+# Ignore python stuff
+__pycache__/
+*.py[cod]
+*$py.class
