@@ -19,7 +19,7 @@ shortcut_key = "custom-keybindings"
 
 
 def set_gsetting(schema_path, key, value):
-    cmd = f"gsettings set {schema_path} {key} {value}"
+    cmd = f'gsettings set {schema_path} {key} "{value}"'
     subprocess.call(["/bin/bash", "-c", cmd])
 
 def get_gsetting(schema_path, key):
@@ -56,9 +56,7 @@ def overwrite_shortcut_list(shortcuts: List[str]):
     shortcuts: List[str]
         A list of shortcut identifiers to install / keep.
     """
-    # cmd = "gsettings set " + settings_key + f' "{shortcuts}"'
-    # subprocess.call(["/bin/bash", "-c", cmd])
-    set_gsetting(shortcut_schema, shortcut_key, f'"{shortcuts}"')
+    set_gsetting(shortcut_schema, shortcut_key, shortcuts)
 
 
 def remove_shortcuts_with_prefix(name_prefix: str):
@@ -121,9 +119,9 @@ def set_new_shortcut(name, command, binding):
     # schema for setting a key is followed by the identifier
     schema = f"{shortcut_schema}.custom-keybinding:{new_shortcut_identifier}"
     key_value_pairs = [
-        ("name", f'"{name}"'),
-        ("command", f'"{command}"'),
-        ("binding", f'"{binding}"')
+        ("name", name),
+        ("command", command),
+        ("binding", binding)
     ]
 
     for k, v in key_value_pairs:

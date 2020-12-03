@@ -25,12 +25,12 @@ from .custom_actions import set_gsetting
 
 def disable_show_desktop():
     """Unbinds <Super><Alt>d from hiding all windows."""
-    sp, key, value = 'org.gnome.desktop.wm.keybindings', 'show-desktop', '"[]"'
+    sp, key, value = 'org.gnome.desktop.wm.keybindings', 'show-desktop', '[]'
     set_gsetting(sp, key, value)
 
 def disable_launch_terminal():
     """Unbinds <Ctrl><Alt>t from launching a terminal window."""
-    sp, key, value = 'org.gnome.settings-daemon.plugins.media-keys', 'terminal', '"[]"'
+    sp, key, value = 'org.gnome.settings-daemon.plugins.media-keys', 'terminal', '[]'
     set_gsetting(sp, key, value)
 
 def disable_switch_workspace_left_right():
