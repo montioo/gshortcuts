@@ -4,7 +4,7 @@
 
 License: MIT
 
-Author: Marius Montebaur ([website](www.montebaur.tech))
+Author: Marius Montebaur ([website](https://www.montebaur.tech))
 
 ---
 
